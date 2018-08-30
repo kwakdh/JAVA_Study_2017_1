@@ -1,0 +1,27 @@
+package rensu;
+
+class Calculator{
+ int x;
+ int y;
+   
+   Calculator(int inputX, int inputY){
+	   x=inputX;
+	   y=inputY;
+   }
+   int add(){
+	   int sum=x+y;
+	   return sum;
+   }
+   
+}
+public class dekiru {
+  public static void main(String args[]){
+	  Calculator MyCal= new Calculator();
+	  MyCal.x=5;
+	  MyCal.y=10;
+	  
+	  System.out.println(MyCal.add());
+	  
+   } 	  
+  }
+

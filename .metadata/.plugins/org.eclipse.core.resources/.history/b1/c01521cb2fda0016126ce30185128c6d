@@ -1,0 +1,20 @@
+package rensu;
+
+class data{
+  int x; 
+     static void change(int x){
+		   x=1000;
+		   System.out.println("바꾸는 중.."+x);
+	   }
+}
+public class dekiru {
+  public static void main(String args[]){
+	  
+	  data d=new data();
+	  d.x= 10;
+	  d. change(d.x);
+	   System.out.printf("After change( )"+d.x);
+  }
+
+  }
+

@@ -1,0 +1,29 @@
+package rensu;
+
+class Mobile{
+ 
+	Mobile(){
+		System.out.println("MobilePhone is invoked");
+	}
+	{
+		System.out.println("instance block");
+	}
+	String name;
+	String vender;
+	int price;
+	int year;
+	int mile;
+	void printPhoneInfo(){
+		System.out.println("ø¨: "+year+"¿Ã∏ß: "+name+"mile:  "+mile);
+	}
+   
+}
+public class dekiru {
+  public static void main(String args[]){
+	  Calculator MyCal= new Calculator(10,20);
+
+	  System.out.println(MyCal.add());
+	  
+   } 	  
+  }
+

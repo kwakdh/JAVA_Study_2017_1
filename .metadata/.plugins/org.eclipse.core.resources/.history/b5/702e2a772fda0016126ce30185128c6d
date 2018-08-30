@@ -1,0 +1,82 @@
+package rensu;
+
+import java.util.Scanner;
+
+class student{
+  	
+  String name;
+  int korean;
+  int math;
+  int english;
+  int sum;
+  double average;
+
+  void calculateSum(){
+	  sum=korean+math+english;
+  }
+  void calculateAver(){
+	  average=sum/3.0d;
+  }
+  
+  void printAll(){
+	  System.out.println(name+"\t"+korean+"\t"+math+"\t"+english+"\t"+
+     sum+"\t"+average);
+  } 
+}
+public class dekiru {
+
+	public static void main(String args[]){
+		Scanner Scan = new Scanner(System.in);
+		
+		System.out.println("학생 수를 입력하세요 ");
+		int Num=Scan.nextInt();
+		//참조변수 배열을 생성 
+	   student scoreList[]=new student[Num];
+	   
+	   for(int index=0 ; index<scoreList.length ; index++){
+		   //객체를 생성해서 배열의 각 요소에 저장하기 
+		   scoreList[index]=new student();
+		   
+		 System.out.println("학생이름 입력!");
+		 scoreList[index].name=Scan.next();
+	   
+
+		 System.out.println("국어성적 입력!");
+		 scoreList[index].korean=Scan.nextInt();
+		 
+		 System.out.println("영어성적 입력!");
+		 scoreList[index].english=Scan.nextInt();
+		 
+
+		 System.out.println("수학성적 입력!");
+		 scoreList[index].math=Scan.nextInt();
+		 
+
+		 scoreList[index].calculateSum();
+		 scoreList[index].calculateAver();
+	   }
+	   
+	   
+	   for(int base=0;base<scoreList.length-1;base++){
+		   
+		   student TmpValue;//멤버 변수?!
+		   
+		   for(int next=base+1;next<scoreList.length;next++){
+			   
+			   if(scoreList[next].sum<scoreList[base].sum){
+				   TmpValue=scoreList[base];
+				   scoreList[base]=scoreList[next];
+				   scoreList[next]=TmpValue;
+			   }   
+		   }
+		   
+	   }
+	   
+	   for(int index=0;index<scoreList.length;index++){
+		   scoreList[index].printAll();
+	   }
+	   
+	   
+	   
+	}	
+}
